@@ -14,7 +14,7 @@ function App() {
 
   const getBooks = async () => {
     try {
-      const response = await fetch('https://book-in-it-api.herokuapp.com/')
+      const response = await fetch('https://book-in-it-api.herokuapp.com/books')
       console.log(response)
       const data = await response.json()
       console.log(data)
@@ -42,7 +42,7 @@ function App() {
     event.preventDefault();
     try {
       const response = await axios.post(
-        'https://book-in-it-api.herokuapp.com/',
+        'https://book-in-it-api.herokuapp.com/books',
         formInputs
       );
       const createdBook = response.data
