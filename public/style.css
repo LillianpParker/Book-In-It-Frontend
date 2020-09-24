@@ -1,3 +1,17 @@
 body{
     background-color: skyblue;
 }
+
+img{
+    width: 100px;
+}
+
+Books{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: start;
+    align-items: auto;
+    align-content: start;
+    width: 300px;
+}
