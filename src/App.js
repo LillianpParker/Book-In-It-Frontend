@@ -19,7 +19,7 @@ const handleChange = (event) => {
 const handleSubmit  = async (event) =>{
   event.preventDefault()
   try{
-    const response = await fetch('http://localhost:3000/books', {
+    const response = await fetch('https://book-in-it-api.herokuapp.com/', {
       body: JSON.stringify(formInputs),
       method: 'POST',
       headers: {
@@ -40,7 +40,7 @@ const handleSubmit  = async (event) =>{
 }
 const getBooks = async () => {
   try {
-    const response = await fetch('https://localhost:3000/books')
+    const response = await fetch('https://book-in-it-api.herokuapp.com/')
     const data = await response.json()
     console.log(data)
    } catch(error){
