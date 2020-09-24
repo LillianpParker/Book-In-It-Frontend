@@ -2,6 +2,8 @@ After many errors with deployment, CORS angry and on my tail, and parts of my co
 
 Backend Here: https://github.com/LillianpParker/Book-In-It-Backend
 
+Original (FAILED) Repository here: https://github.com/LillianpParker/Book-In-It
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
