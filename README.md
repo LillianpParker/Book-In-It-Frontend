@@ -1,3 +1,5 @@
+After many errors with deployment, CORS angry and on my tail, and parts of my code throwing a fit, Book-In-It was deployed. Using Rails for the backend, this application has full CRUD (Create is available on the webpage, all others can be accessed through Postman) and a React Frontend. Overall the ending was painful and I'd like to have a good cry over a piece of cake and disney movie, but there's no time for that, onward to Project 5!!!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
