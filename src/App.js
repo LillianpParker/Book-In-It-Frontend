@@ -1,16 +1,25 @@
 import React, {useState, useEffect} from 'react';
-import './App.css';
 import Books from './components/Books.js';
 
 
-export default function App(props) {
-  const [books, setBooks] = useState([])
+function App () {
   const [formInputs, updateFormInputs] = useState({
+    cover_image: '',
+    title: '',
     author: '',
-    content: '',
-    title: ''
-  })
-  
+    synopsis: ''
+  });
+  const [books, setBooks] = useState([])
+  useEffect(
+    ()=>{
+      const callBooks = async ()=>{
+       await getBooks();	
+     }
+     callBooks();
+    }, 
+    []
+    )
+
 const handleChange = (event) => {
   const updateInput = Object.assign({}, formInputs, { [event.target.id]: event.target.value })
   updateFormInputs(updateInput)
@@ -19,7 +28,7 @@ const handleChange = (event) => {
 const handleSubmit  = async (event) =>{
   event.preventDefault()
   try{
-    const response = await fetch('https://book-in-it-api.herokuapp.com/', {
+    const response = await fetch('https://book-in-it-api.herokuapp.com/books', {
       body: JSON.stringify(formInputs),
       method: 'POST',
       headers: {
@@ -29,24 +38,27 @@ const handleSubmit  = async (event) =>{
     })
     const data = await response.json()
     updateFormInputs({
+      cover_image: '',
+      title: '',
       author: '',
-      content: '',
-      title: ''
+      synopsis: ''
     })
     setBooks([data, ...books])
   }catch(error){
     console.error(error)
   }
 }
+
 const getBooks = async () => {
   try {
-    const response = await fetch('https://book-in-it-api.herokuapp.com/')
+    const response = await fetch('https://book-in-it-api.herokuapp.com/books')
     const data = await response.json()
     console.log(data)
    } catch(error){
      console.error(error)
    }
- } 
+ }
+
 useEffect(()=>{
  (async function (){
    await getBooks()
@@ -79,3 +91,5 @@ useEffect(()=>{
   </div>
   );
 }
+
+export default App;
