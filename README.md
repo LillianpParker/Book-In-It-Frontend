@@ -4,6 +4,8 @@ Backend Here: https://github.com/LillianpParker/Book-In-It-Backend
 
 Original (FAILED) Repository here: https://github.com/LillianpParker/Book-In-It
 
+Deployed here: https://book-in-it.herokuapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
